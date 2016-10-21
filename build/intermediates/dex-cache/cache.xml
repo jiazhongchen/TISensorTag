@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="21.1.2"
-        sha1="d8513c76f3a860aaf4d68eb0987c444b1dc97336">
+        sha1="3e85c9d6b069d2e4a151f35e4c14e86e2d58c5dc">
         <dex dex="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_fa6d9664a091718d66c89ac4046234969d8389b6/classes.dex" />
     </item>
     <item
@@ -43,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="21.1.2"
-        sha1="ccfdf5076e316a3d8b7a5386c9d3da959d2bf161">
+        sha1="15b501cfee901793bd088878fc527424e3c2c0fe">
         <dex dex="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5bfccc00e1c259c4bc3ea9dbfea2825e46575679/classes.dex" />
     </item>
 

@@ -8,12 +8,12 @@
         "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/colorpicker.png"
     },
     {
-        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/tible.png",
-        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/tible.png"
-    },
-    {
         "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/sensortag2deviceinfo.png",
         "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/sensortag2deviceinfo.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/tible.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/tible.png"
     },
     {
         "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/barometer.png",
@@ -24,12 +24,12 @@
         "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/humidity.png"
     },
     {
-        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/rightkeyon_300.png",
-        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/rightkeyon_300.png"
-    },
-    {
         "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/ic_action_bluetooth.png",
         "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/ic_action_bluetooth.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/rightkeyon_300.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/rightkeyon_300.png"
     },
     {
         "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/sensortag2ccs.png",
@@ -64,12 +64,12 @@
         "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/sensortag2motion.png"
     },
     {
-        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/sensortag2accelerometer.png",
-        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/sensortag2accelerometer.png"
-    },
-    {
         "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/sensortag2cloudservice.png",
         "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/sensortag2cloudservice.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/sensortag2accelerometer.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-hdpi/sensortag2accelerometer.png"
     },
     {
         "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-hdpi/sensortag.png",

@@ -4,33 +4,29 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="22602175350993"
-    token="5719332075886823174"
-    verifier="FULL_BUILD_REQUESTED" >
+    timestamp="26191116403755"
+    token="5719332075886823174" >
 
     <task
         name="javac"
-        duration="302" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="388" />
+        duration="0" />
     <task
         name="verifier"
-        duration="17" />
-
-    <artifact
-        location="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/outputs/apk/BleSensorTag-debug.apk"
-        type="MAIN" />
+        duration="0" />
 
     <build
-        timestamp="22602175350993"
+        timestamp="26021672129017"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/outputs/apk/BleSensorTag-debug.apk"
             type="MAIN" />
     </build>
+    <build timestamp="26191116403755" />
 
 </instant-run>

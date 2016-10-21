@@ -365,8 +365,8 @@ import java.util.Map;
 
 	private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
 
-	    List <BluetoothGattService> serviceList;
-	    List <BluetoothGattCharacteristic> charList = new ArrayList<BluetoothGattCharacteristic>();
+	    //List <BluetoothGattService> serviceList;
+	    List <BluetoothGattCharacteristic> charList = new ArrayList<>();
 
         @Override
 		public void onReceive(final Context context, Intent intent) {
@@ -387,294 +387,7 @@ import java.util.Map;
 
 				if (status == BluetoothGatt.GATT_SUCCESS) {
 
-					serviceList = mBLE_Service.getSupportedGattServices();
-                    if (serviceList.size() > 0) {
-						Log.d(TAG, "On Receive ACTION_GATT_SERVICES_DISCOVERED " + serviceList.size());
-						for (int index_services = 0; index_services != serviceList.size(); ++index_services) {
-                            BluetoothGattService bleGattService = serviceList.get(index_services);
-                            List<BluetoothGattCharacteristic> bleGattCharacteristicList = bleGattService.getCharacteristics();
-                            if (bleGattCharacteristicList.size() > 0) {
-                                for (int index_characteristics = 0; index_characteristics != bleGattCharacteristicList.size(); ++index_characteristics) {
-									charList.add(bleGattCharacteristicList.get(index_characteristics));
-								}
-                            }
-                        }
-                    }
-
-                    //Log.d("DeviceActivity","Total characteristics " + charList.size());
-                    Thread worker = new Thread(new Runnable() {
-
-                        @Override
-                        public void run() {
-
-                            //Iterate through the services and add GenericBluetoothServices for each service
-                            int nrNotificationsOn = 0;
-                            int maxNotifications;
-                            int servicesDiscovered = 0;
-                            int totalCharacteristics = 0;
-                            //serviceList = mBLE_Service.getSupportedGattServices();
-                            for (BluetoothGattService s : serviceList) {
-                                List<BluetoothGattCharacteristic> chars = s.getCharacteristics();
-                                totalCharacteristics += chars.size();
-                            }
-                            //Special profile for Cloud service
-                            mqttProfile = new IBMIoTCloudProfile(context, mBLE_Device, null, mBLE_Service);
-                            mProfiles.add(mqttProfile);
-
-                            if (totalCharacteristics == 0) {
-
-                                //Something bad happened, we have a problem
-                                runOnUiThread(new Runnable() {
-
-                                    @Override
-                                    public void run() {
-
-                                        progressDialog.hide();
-                                        progressDialog.dismiss();
-
-                                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-                                        alertDialogBuilder.setTitle("Error !");
-                                        alertDialogBuilder.setMessage(serviceList.size() + " Services found, but no characteristics found, device will be disconnected !");
-
-                                        alertDialogBuilder.setPositiveButton("Retry", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                mBLE_Service.refreshDeviceCache(mBtGatt);
-                                                //Try again
-                                                discoverServices();
-                                            }
-                                        });
-
-                                        alertDialogBuilder.setNegativeButton("Disconnect",new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                mBLE_Service.disconnect(mBLE_Device.getAddress());
-                                            }
-                                        });
-
-                                        AlertDialog a = alertDialogBuilder.create();
-                                        a.show();
-                                    }
-                                });
-                                return;
-    			            }
-
-			                final int final_totalCharacteristics = totalCharacteristics;
-
-			                runOnUiThread(new Runnable() {
-                                @Override
-				                public void run() {
-                                    progressDialog.setIndeterminate(false);
-                                    progressDialog.setTitle("Generating GUI");
-				                    progressDialog.setMessage("Found a total of " + serviceList.size() + " services with a total of " + final_totalCharacteristics + " characteristics on this device" );
-                                }
-                            });
-
-			                if (Build.VERSION.SDK_INT > 18) {
-                                maxNotifications = 7;
-                            } else {
-				                maxNotifications = 4;
-				                runOnUiThread(new Runnable() {
-				                    @Override
-				                    public void run() {
-					                    Toast.makeText(context, "Android version 4.3 detected, max 4 notifications enabled", Toast.LENGTH_LONG).show();
-				                    }
-				                });
-			                }
-
-			                for (int ii = 0; ii < serviceList.size(); ii++) {
-
-				                BluetoothGattService s = serviceList.get(ii);
-				                List<BluetoothGattCharacteristic> chars = s.getCharacteristics();
-
-                                if (chars.size() == 0) {
-		        		            Log.d("DeviceActivity", "No characteristics found for this service !!!");
-				                    return;
-                                }
-				                servicesDiscovered++;
-
-                                final float serviceDiscoveredcalc = (float)servicesDiscovered;
-                                final float serviceTotalcalc = (float)serviceList.size();
-
-    				            runOnUiThread(new Runnable() {
-                                    @Override
-				                    public void run() {
-					                    progressDialog.setProgress((int)((serviceDiscoveredcalc / (serviceTotalcalc - 1)) * 100));
-				                    }
-				                });
-
-				                //Log.d("DeviceActivity", "Configuring service with uuid : " + s.getUuid().toString());
-				                if (SensorTagHumidityProfile.isCorrectService(s)) {
-				                    SensorTagHumidityProfile hum = new SensorTagHumidityProfile(context, mBLE_Device, s, mBLE_Service);
-                                    mProfiles.add(hum);
-                                    if (nrNotificationsOn < maxNotifications) {
-					                    hum.configureService();
-					                    nrNotificationsOn++;
-				                    } else {
-                                        hum.grayOutCell(true);
-                                    }
-				                    Log.d("DeviceActivity","Found Humidity !");
-                                }
-
-				                if (SensorTagLuxometerProfile.isCorrectService(s)) {
-
-        				            SensorTagLuxometerProfile lux = new SensorTagLuxometerProfile(context,mBLE_Device,s,mBLE_Service);
-	        			            mProfiles.add(lux);
-
-                                    if (nrNotificationsOn < maxNotifications) {
-	    		    		            lux.configureService();
-		    		    	            nrNotificationsOn++;
-			    	                } else {
-    			    		            lux.grayOutCell(true);
-                                    }
-				                }
-
-        				        if (SensorTagSimpleKeysProfile.isCorrectService(s)) {
-
-                                    SensorTagSimpleKeysProfile key = new SensorTagSimpleKeysProfile(context,mBLE_Device,s,mBLE_Service);
-		        		            mProfiles.add(key);
-				                    if (nrNotificationsOn < maxNotifications) {
-					                    key.configureService();
-					                    nrNotificationsOn++;
-				                    } else {
-					                    key.grayOutCell(true);
-				                    }
-    				                Log.d("DeviceActivity","Found Simple Keys !");
-				                }
-
-	    			            if (SensorTagBarometerProfile.isCorrectService(s)) {
-
-            				        SensorTagBarometerProfile baro = new SensorTagBarometerProfile(context,mBLE_Device,s,mBLE_Service);
-		            		        mProfiles.add(baro);
-				                    if (nrNotificationsOn < maxNotifications) {
-					                    baro.configureService();
-                                        nrNotificationsOn++;
-                                    } else {
-                                        baro.grayOutCell(true);
-                                    }
-        				            Log.d("DeviceActivity","Found Barometer !");
-                                }
-
-                                if (SensorTagAmbientTemperatureProfile.isCorrectService(s)) {
-                                    SensorTagAmbientTemperatureProfile irTemp = new SensorTagAmbientTemperatureProfile(context,mBLE_Device,s,mBLE_Service);
-                                    mProfiles.add(irTemp);
-                                    if (nrNotificationsOn < maxNotifications) {
-                                        irTemp.configureService();
-                                        nrNotificationsOn++;
-                                    } else {
-                                        irTemp.grayOutCell(true);
-                                    }
-                                    Log.d("DeviceActivity","Found Ambient Temperature !");
-                                }
-
-                                if (SensorTagIRTemperatureProfile.isCorrectService(s)) {
-                                    SensorTagIRTemperatureProfile irTemp = new SensorTagIRTemperatureProfile(context,mBLE_Device,s,mBLE_Service);
-                                    mProfiles.add(irTemp);
-                                    if (nrNotificationsOn < maxNotifications) {
-                                        irTemp.configureService();
-                                    } else {
-                                        irTemp.grayOutCell(true);
-                                    }
-                                    //No notifications add here because it is already enabled above ..
-                                    Log.d("DeviceActivity","Found IR Temperature !");
-                                }
-
-                                if (SensorTagMovementProfile.isCorrectService(s)) {
-                                    SensorTagMovementProfile mov = new SensorTagMovementProfile(context,mBLE_Device,s,mBLE_Service);
-                                    mProfiles.add(mov);
-                                    if (nrNotificationsOn < maxNotifications) {
-                                        mov.configureService();
-                                        nrNotificationsOn++;
-                                    } else {
-                                        mov.grayOutCell(true);
-                                    }
-                                    Log.d("DeviceActivity","Found Motion !");
-                                }
-
-                                if (SensorTagAccelerometerProfile.isCorrectService(s)) {
-                                    SensorTagAccelerometerProfile acc = new SensorTagAccelerometerProfile(context,mBLE_Device,s,mBLE_Service);
-                                    mProfiles.add(acc);
-                                    if (nrNotificationsOn < maxNotifications) {
-                                        acc.configureService();
-                                        nrNotificationsOn++;
-                                    } else {
-                                        acc.grayOutCell(true);
-                                    }
-                                    Log.d("DeviceActivity","Found Motion !");
-                                }
-
-                                if (SensorTagDisplayProfile.isCorrectService(s)) {
-                                    SensorTagDisplayProfile d = new SensorTagDisplayProfile(context,mBLE_Device,s,mBLE_Service);
-                                    mProfiles.add(d);
-                                    d.configureService();
-                                    Log.d("DeviceActivity","Found Display Control Service");
-                                }
-
-                                if (TILampControlProfile.isCorrectService(s)) {
-                                    TILampControlProfile lamp = new TILampControlProfile(context,mBLE_Device,s,mBLE_Service);
-                                    mProfiles.add(lamp);
-                                    lamp.configureService();
-                                    Log.d("DeviceActivity","Found Lamp Control Service");
-                                }
-
-                                if (DeviceInformationServiceProfile.isCorrectService(s)) {
-                                    DeviceInformationServiceProfile devInfo = new DeviceInformationServiceProfile(context,mBLE_Device,s,mBLE_Service);
-                                    mProfiles.add(devInfo);
-                                    devInfo.configureService();
-                                    Log.d("DeviceActivity","Found Device Information Service");
-                                }
-
-                                if (TIOADProfile.isCorrectService(s)) {
-                                    TIOADProfile oad = new TIOADProfile(context,mBLE_Device,s,mBLE_Service);
-                                    mProfiles.add(oad);
-                                    oad.configureService();
-                                    mOadService = s;
-                                    Log.d("DeviceActivity","Found TI OAD Service");
-                                }
-
-                                if (SensorTagTestProfile.isCorrectService(s)) {
-                                    mTestService = s;
-                                }
-
-                                if ((s.getUuid().toString().compareTo("f000ccc0-0451-4000-b000-000000000000")) == 0) {
-                                    mConnControlService = s;
-                                }
-                            }
-
-	        		        runOnUiThread(new Runnable() {
-			        	        @Override
-				                public void run() {
-                                    progressDialog.setTitle("Enabling Services");
-                                    progressDialog.setMax(mProfiles.size());
-	    		    	            progressDialog.setProgress(0);
-		    		            }
-			                });
-
-			                for (final GenericBluetoothProfile p : mProfiles) {
-
-                                runOnUiThread(new Runnable() {
-                                    @Override
-				                    public void run() {
-					                    mDeviceView.addRowToTable(p.getTableRow());
-					                    p.enableService();
-    					                progressDialog.setProgress(progressDialog.getProgress() + 1);
-	    			                }
-		    		        	});
-
-			    	        	p.onResume();
-			            	}
-
-    			        	runOnUiThread(new Runnable() {
-                            	@Override
-		    		        	public void run() {
-			    	            	progressDialog.hide();
-				                	progressDialog.dismiss();
-				            	}
-							});
-                        }
-                    });
-	    	        worker.start();
-
+					serviceHandling(context, charList);
 		        } else {
                     Toast.makeText(getApplication(), "Service discovery failed", Toast.LENGTH_LONG).show();
                     return;
@@ -822,5 +535,302 @@ import java.util.Map;
 	        super.onPostExecute(result);
 	    }
     }
+
+	private void serviceHandling(final Context context, final List <BluetoothGattCharacteristic> charList) {
+
+		final List <BluetoothGattService> serviceList = mBLE_Service.getSupportedGattServices();
+		//final List <BluetoothGattCharacteristic> new_charList = charList;
+
+		if (serviceList.size() > 0) {
+			Log.d(TAG, "On Receive ACTION_GATT_SERVICES_DISCOVERED " + serviceList.size());
+			for (int index_services = 0; index_services != serviceList.size(); ++index_services) {
+				BluetoothGattService bleGattService = serviceList.get(index_services);
+				Log.d(TAG, "UUID:" + bleGattService.getUuid());
+				List<BluetoothGattCharacteristic> bleGattCharacteristicList = bleGattService.getCharacteristics();
+				if (bleGattCharacteristicList.size() > 0) {
+					for (int index_characteristics = 0; index_characteristics != bleGattCharacteristicList.size(); ++index_characteristics) {
+						Log.d(TAG, "Characteristic:" + bleGattCharacteristicList.get(index_characteristics));
+						charList.add(bleGattCharacteristicList.get(index_characteristics));
+					}
+				}
+			}
+		}
+
+		//Log.d(TAG,"Total characteristics " + charList.size());
+		Thread worker = new Thread(new Runnable() { //define a new thread here.
+
+			@Override
+			public void run() {
+
+				//Iterate through the services and add GenericBluetoothServices for each service
+				int nrNotificationsOn = 0;
+				int maxNotifications;
+				int servicesDiscovered = 0;
+				int totalCharacteristics = charList.size();
+				//serviceList = mBLE_Service.getSupportedGattServices();
+
+				//for (BluetoothGattService s : serviceList) {
+				//	List<BluetoothGattCharacteristic> chars = s.getCharacteristics();
+				//	totalCharacteristics += chars.size();
+				//}
+
+				//Special profile for Cloud service
+				mqttProfile = new IBMIoTCloudProfile(context, mBLE_Device, null, mBLE_Service);
+				mProfiles.add(mqttProfile);
+
+				if (totalCharacteristics == 0) {
+					//Something bad happened, we have a problem
+					runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+
+							progressDialog.hide();
+							progressDialog.dismiss();
+
+							AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+							alertDialogBuilder.setTitle("Error !");
+							alertDialogBuilder.setMessage(serviceList.size() + " Services found, but no characteristics found, device will be disconnected !");
+
+							alertDialogBuilder.setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+								@Override
+								public void onClick(DialogInterface dialog, int which) {
+									mBLE_Service.refreshDeviceCache(mBtGatt);
+									//Try again
+									discoverServices();
+								}
+							});
+
+							alertDialogBuilder.setNegativeButton("Disconnect",new DialogInterface.OnClickListener() {
+								@Override
+								public void onClick(DialogInterface dialog, int which) {
+									mBLE_Service.disconnect(mBLE_Device.getAddress());
+								}
+							});
+
+							AlertDialog a = alertDialogBuilder.create();
+							a.show();
+						}
+					});
+					return;
+				}
+
+				final int final_totalCharacteristics = totalCharacteristics;
+
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						progressDialog.setIndeterminate(false);
+						progressDialog.setTitle("Generating GUI");
+						progressDialog.setMessage("Found a total of " + serviceList.size() + " services with a total of " + final_totalCharacteristics + " characteristics on this device" );
+					}
+				});
+
+				if (Build.VERSION.SDK_INT > 18) {
+					maxNotifications = 7;
+				} else {
+					maxNotifications = 4;
+					runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							Toast.makeText(context, "Android version 4.3 detected, max 4 notifications enabled", Toast.LENGTH_LONG).show();
+						}
+					});
+				}
+
+				for (int ii = 0; ii < serviceList.size(); ii++) {
+
+					BluetoothGattService s = serviceList.get(ii);
+					List<BluetoothGattCharacteristic> chars = s.getCharacteristics();
+
+					if (chars.size() == 0) {
+						Log.d("DeviceActivity", "No characteristics found for this service !!!");
+						return;
+					}
+					servicesDiscovered++;
+
+					final float serviceDiscoveredcalc = (float)servicesDiscovered;
+					final float serviceTotalcalc = (float)serviceList.size();
+
+					runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							progressDialog.setProgress((int)((serviceDiscoveredcalc / (serviceTotalcalc - 1)) * 100));
+						}
+					});
+
+					//Log.d("DeviceActivity", "Configuring service with uuid : " + s.getUuid().toString());
+					if (SensorTagHumidityProfile.isCorrectService(s)) {
+						SensorTagHumidityProfile hum = new SensorTagHumidityProfile(context, mBLE_Device, s, mBLE_Service);
+						mProfiles.add(hum);
+						if (nrNotificationsOn < maxNotifications) {
+							hum.configureService();
+							nrNotificationsOn++;
+						} else {
+							hum.grayOutCell(true);
+						}
+						Log.d("DeviceActivity","Found Humidity !");
+					}
+
+					if (SensorTagLuxometerProfile.isCorrectService(s)) {
+
+						SensorTagLuxometerProfile lux = new SensorTagLuxometerProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(lux);
+
+						if (nrNotificationsOn < maxNotifications) {
+							lux.configureService();
+							nrNotificationsOn++;
+						} else {
+							lux.grayOutCell(true);
+						}
+					}
+
+					if (SensorTagSimpleKeysProfile.isCorrectService(s)) {
+
+						SensorTagSimpleKeysProfile key = new SensorTagSimpleKeysProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(key);
+						if (nrNotificationsOn < maxNotifications) {
+							key.configureService();
+							nrNotificationsOn++;
+						} else {
+							key.grayOutCell(true);
+						}
+						Log.d("DeviceActivity","Found Simple Keys !");
+					}
+
+					if (SensorTagBarometerProfile.isCorrectService(s)) {
+
+						SensorTagBarometerProfile baro = new SensorTagBarometerProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(baro);
+						if (nrNotificationsOn < maxNotifications) {
+							baro.configureService();
+							nrNotificationsOn++;
+						} else {
+							baro.grayOutCell(true);
+						}
+						Log.d("DeviceActivity","Found Barometer !");
+					}
+
+					if (SensorTagAmbientTemperatureProfile.isCorrectService(s)) {
+						SensorTagAmbientTemperatureProfile irTemp = new SensorTagAmbientTemperatureProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(irTemp);
+						if (nrNotificationsOn < maxNotifications) {
+							irTemp.configureService();
+							nrNotificationsOn++;
+						} else {
+							irTemp.grayOutCell(true);
+						}
+						Log.d("DeviceActivity","Found Ambient Temperature !");
+					}
+
+					if (SensorTagIRTemperatureProfile.isCorrectService(s)) {
+						SensorTagIRTemperatureProfile irTemp = new SensorTagIRTemperatureProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(irTemp);
+						if (nrNotificationsOn < maxNotifications) {
+							irTemp.configureService();
+						} else {
+							irTemp.grayOutCell(true);
+						}
+						//No notifications add here because it is already enabled above ..
+						Log.d("DeviceActivity","Found IR Temperature !");
+					}
+
+					if (SensorTagMovementProfile.isCorrectService(s)) {
+						SensorTagMovementProfile mov = new SensorTagMovementProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(mov);
+						if (nrNotificationsOn < maxNotifications) {
+							mov.configureService();
+							nrNotificationsOn++;
+						} else {
+							mov.grayOutCell(true);
+						}
+						Log.d("DeviceActivity","Found Motion !");
+					}
+
+					if (SensorTagAccelerometerProfile.isCorrectService(s)) {
+						SensorTagAccelerometerProfile acc = new SensorTagAccelerometerProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(acc);
+						if (nrNotificationsOn < maxNotifications) {
+							acc.configureService();
+							nrNotificationsOn++;
+						} else {
+							acc.grayOutCell(true);
+						}
+						Log.d("DeviceActivity","Found Motion !");
+					}
+
+					if (SensorTagDisplayProfile.isCorrectService(s)) {
+						SensorTagDisplayProfile d = new SensorTagDisplayProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(d);
+						d.configureService();
+						Log.d("DeviceActivity","Found Display Control Service");
+					}
+
+					if (TILampControlProfile.isCorrectService(s)) {
+						TILampControlProfile lamp = new TILampControlProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(lamp);
+						lamp.configureService();
+						Log.d("DeviceActivity","Found Lamp Control Service");
+					}
+
+					if (DeviceInformationServiceProfile.isCorrectService(s)) {
+						DeviceInformationServiceProfile devInfo = new DeviceInformationServiceProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(devInfo);
+						devInfo.configureService();
+						Log.d("DeviceActivity","Found Device Information Service");
+					}
+
+					if (TIOADProfile.isCorrectService(s)) {
+						TIOADProfile oad = new TIOADProfile(context,mBLE_Device,s,mBLE_Service);
+						mProfiles.add(oad);
+						oad.configureService();
+						mOadService = s;
+						Log.d("DeviceActivity","Found TI OAD Service");
+					}
+
+					if (SensorTagTestProfile.isCorrectService(s)) {
+						mTestService = s;
+					}
+
+					if ((s.getUuid().toString().compareTo("f000ccc0-0451-4000-b000-000000000000")) == 0) {
+						mConnControlService = s;
+					}
+				}
+
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						progressDialog.setTitle("Enabling Services");
+						progressDialog.setMax(mProfiles.size());
+						progressDialog.setProgress(0);
+					}
+				});
+
+				for (final GenericBluetoothProfile p : mProfiles) {
+
+					runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							mDeviceView.addRowToTable(p.getTableRow());
+							p.enableService();
+							progressDialog.setProgress(progressDialog.getProgress() + 1);
+						}
+					});
+
+					p.onResume();
+				}
+
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						progressDialog.hide();
+						progressDialog.dismiss();
+					}
+				});
+			}
+		});
+
+		worker.start();
+
+	}
 
 }

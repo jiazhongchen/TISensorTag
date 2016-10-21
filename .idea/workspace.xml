@@ -65,8 +65,8 @@
       <file leaf-file-name="DeviceActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BleSensorTag/src/main/java/com/example/ti/ble/sensortag/DeviceActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="400" column="25" selection-start-line="400" selection-start-column="25" selection-end-line="400" selection-end-column="25" />
+            <state relative-caret-position="156">
+              <caret line="571" column="62" selection-start-line="571" selection-start-column="62" selection-end-line="571" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6057#6058#0" expanded="true" />
@@ -85,30 +85,29 @@
                 <element signature="e#12461#12462#0" expanded="true" />
                 <element signature="e#12834#12835#0" expanded="true" />
                 <element signature="e#12893#12894#0" expanded="true" />
-                <element signature="e#13088#13117#0" expanded="true" />
-                <element signature="e#15001#29474#0" expanded="true" />
-                <element signature="e#16195#18085#0" expanded="true" />
-                <element signature="e#16900#17400#0" expanded="true" />
-                <element signature="e#17399#17400#0" expanded="true" />
-                <element signature="e#17494#17875#0" expanded="true" />
-                <element signature="e#17874#17875#0" expanded="true" />
-                <element signature="e#18084#18085#0" expanded="true" />
-                <element signature="e#18264#18771#0" expanded="true" />
-                <element signature="e#18770#18771#0" expanded="true" />
-                <element signature="e#18995#19274#0" expanded="true" />
-                <element signature="e#19273#19274#0" expanded="true" />
-                <element signature="e#20006#20276#0" expanded="true" />
-                <element signature="e#20275#20276#0" expanded="true" />
-                <element signature="e#28313#28656#0" expanded="true" />
-                <element signature="e#28655#28656#0" expanded="true" />
-                <element signature="e#28778#29129#0" expanded="true" />
-                <element signature="e#29128#29129#0" expanded="true" />
-                <element signature="e#29213#29424#0" expanded="true" />
-                <element signature="e#29423#29424#0" expanded="true" />
-                <element signature="e#29473#29474#0" expanded="true" />
-                <element signature="e#35134#35135#0" expanded="true" />
-                <element signature="e#35182#35183#0" expanded="true" />
-                <marker date="1477024423285" expanded="false" signature="33837:35330" ph="{...}" />
+                <element signature="e#19599#19600#0" expanded="true" />
+                <element signature="e#19647#19648#0" expanded="true" />
+                <element signature="e#20953#29767#0" expanded="true" />
+                <element signature="e#21760#22797#0" expanded="true" />
+                <element signature="e#22206#22448#0" expanded="true" />
+                <element signature="e#22447#22448#0" expanded="true" />
+                <element signature="e#22509#22710#0" expanded="true" />
+                <element signature="e#22709#22710#0" expanded="true" />
+                <element signature="e#22796#22797#0" expanded="true" />
+                <element signature="e#22904#23240#0" expanded="true" />
+                <element signature="e#23239#23240#0" expanded="true" />
+                <element signature="e#23368#23560#0" expanded="true" />
+                <element signature="e#23559#23560#0" expanded="true" />
+                <element signature="e#24058#24229#0" expanded="true" />
+                <element signature="e#24228#24229#0" expanded="true" />
+                <element signature="e#29074#29279#0" expanded="true" />
+                <element signature="e#29278#29279#0" expanded="true" />
+                <element signature="e#29359#29578#0" expanded="true" />
+                <element signature="e#29577#29578#0" expanded="true" />
+                <element signature="e#29626#29756#0" expanded="true" />
+                <element signature="e#29755#29756#0" expanded="true" />
+                <element signature="e#29766#29767#0" expanded="true" />
+                <marker date="1477027613226" expanded="false" signature="18302:19795" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -2157,7 +2156,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2171,7 +2170,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -2654,8 +2653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BleSensorTag/src/main/java/com/example/ti/ble/sensortag/DeviceActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="400" column="25" selection-start-line="400" selection-start-column="25" selection-end-line="400" selection-end-column="25" />
+        <state relative-caret-position="156">
+          <caret line="571" column="62" selection-start-line="571" selection-start-column="62" selection-end-line="571" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6057#6058#0" expanded="true" />
@@ -2674,30 +2673,29 @@
             <element signature="e#12461#12462#0" expanded="true" />
             <element signature="e#12834#12835#0" expanded="true" />
             <element signature="e#12893#12894#0" expanded="true" />
-            <element signature="e#13088#13117#0" expanded="true" />
-            <element signature="e#15001#29474#0" expanded="true" />
-            <element signature="e#16195#18085#0" expanded="true" />
-            <element signature="e#16900#17400#0" expanded="true" />
-            <element signature="e#17399#17400#0" expanded="true" />
-            <element signature="e#17494#17875#0" expanded="true" />
-            <element signature="e#17874#17875#0" expanded="true" />
-            <element signature="e#18084#18085#0" expanded="true" />
-            <element signature="e#18264#18771#0" expanded="true" />
-            <element signature="e#18770#18771#0" expanded="true" />
-            <element signature="e#18995#19274#0" expanded="true" />
-            <element signature="e#19273#19274#0" expanded="true" />
-            <element signature="e#20006#20276#0" expanded="true" />
-            <element signature="e#20275#20276#0" expanded="true" />
-            <element signature="e#28313#28656#0" expanded="true" />
-            <element signature="e#28655#28656#0" expanded="true" />
-            <element signature="e#28778#29129#0" expanded="true" />
-            <element signature="e#29128#29129#0" expanded="true" />
-            <element signature="e#29213#29424#0" expanded="true" />
-            <element signature="e#29423#29424#0" expanded="true" />
-            <element signature="e#29473#29474#0" expanded="true" />
-            <element signature="e#35134#35135#0" expanded="true" />
-            <element signature="e#35182#35183#0" expanded="true" />
-            <marker date="1477024423285" expanded="false" signature="33837:35330" ph="{...}" />
+            <element signature="e#19599#19600#0" expanded="true" />
+            <element signature="e#19647#19648#0" expanded="true" />
+            <element signature="e#20953#29767#0" expanded="true" />
+            <element signature="e#21760#22797#0" expanded="true" />
+            <element signature="e#22206#22448#0" expanded="true" />
+            <element signature="e#22447#22448#0" expanded="true" />
+            <element signature="e#22509#22710#0" expanded="true" />
+            <element signature="e#22709#22710#0" expanded="true" />
+            <element signature="e#22796#22797#0" expanded="true" />
+            <element signature="e#22904#23240#0" expanded="true" />
+            <element signature="e#23239#23240#0" expanded="true" />
+            <element signature="e#23368#23560#0" expanded="true" />
+            <element signature="e#23559#23560#0" expanded="true" />
+            <element signature="e#24058#24229#0" expanded="true" />
+            <element signature="e#24228#24229#0" expanded="true" />
+            <element signature="e#29074#29279#0" expanded="true" />
+            <element signature="e#29278#29279#0" expanded="true" />
+            <element signature="e#29359#29578#0" expanded="true" />
+            <element signature="e#29577#29578#0" expanded="true" />
+            <element signature="e#29626#29756#0" expanded="true" />
+            <element signature="e#29755#29756#0" expanded="true" />
+            <element signature="e#29766#29767#0" expanded="true" />
+            <marker date="1477027613226" expanded="false" signature="18302:19795" ph="{...}" />
           </folding>
         </state>
       </provider>
