@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/xml/preferences.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/xml/gatt_uuid.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/xml/gatt_uuid.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/xml/firmware_list.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/xml/firmware_list.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/xml/list_gradient.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/xml/list_gradient.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/xml/popup.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/xml/popup.xml"
+    }
+]

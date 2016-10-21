@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/ic_action_bluetooth.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/ic_action_bluetooth.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/buttonsoffoff.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/buttonsoffoff.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/tible.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/tible.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/buttonsonoff.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/buttonsonoff.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/ti_stk_2c_pos_rgb_png.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/ti_stk_2c_pos_rgb_png.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/ic_action_about.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/ic_action_about.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/buttonsonon.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/buttonsonon.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/ic_action_settings.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/ic_action_settings.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/ic_action_refresh.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/ic_action_refresh.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/reed_closed.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/reed_closed.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/ic_action_cancel.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/ic_action_cancel.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/reed_open.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/reed_open.png"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/drawable-mdpi/buttonsoffon.png",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/drawable-mdpi/buttonsoffon.png"
+    }
+]

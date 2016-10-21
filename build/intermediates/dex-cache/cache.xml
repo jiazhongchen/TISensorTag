@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/jchen/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-19.1.0_4a3c691a30421df59b3b65e28c6bf56e892e44e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="d8513c76f3a860aaf4d68eb0987c444b1dc97336">
+        <dex dex="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_fa6d9664a091718d66c89ac4046234969d8389b6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/libs/org.eclipse.paho.client.mqttv3-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="02e433eb0fda11fe7170cf8214ba2f4d165c29b6">
+        <dex dex="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/2/org.eclipse.paho.client.mqttv3-1.0.2_f9ae674cf0897b86d0966b0ec8cef7d4822b4653/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/libs/org.eclipse.paho.android.service-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="3b8420e57139cc627a55be0c17b6687e92d7460f">
+        <dex dex="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/2/org.eclipse.paho.android.service-1.0.2_d6a355a0de1e344f0cd9bcc698c5455f16841f36/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="ccfdf5076e316a3d8b7a5386c9d3da959d2bf161">
+        <dex dex="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5bfccc00e1c259c4bc3ea9dbfea2825e46575679/classes.dex" />
+    </item>
+
+</items>

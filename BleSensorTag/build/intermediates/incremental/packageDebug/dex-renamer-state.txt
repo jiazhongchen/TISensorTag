@@ -1,0 +1,7 @@
+#Fri Oct 21 15:31:05 AEDT 2016
+base.0=/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_fa6d9664a091718d66c89ac4046234969d8389b6
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5bfccc00e1c259c4bc3ea9dbfea2825e46575679/classes.dex
+base.1=/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5bfccc00e1c259c4bc3ea9dbfea2825e46575679
+file.0=/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_fa6d9664a091718d66c89ac4046234969d8389b6/classes.dex

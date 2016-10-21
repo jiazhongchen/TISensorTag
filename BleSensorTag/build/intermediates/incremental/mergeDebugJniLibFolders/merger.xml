@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/debug/jniLibs"/></dataSet></merger>

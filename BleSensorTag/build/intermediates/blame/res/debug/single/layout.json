@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/dialog_license.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/dialog_license.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/fw_selector.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/fw_selector.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/fragment_help.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/fragment_help.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/fragment_scan.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/fragment_scan.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/generic_services_browser.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/generic_services_browser.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/lamp_control.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/lamp_control.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/activity_fwupdate.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/activity_fwupdate.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/element_file.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/element_file.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/element_characteristic.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/element_characteristic.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/dialog_about.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/dialog_about.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/oad_dialog.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/oad_dialog.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/element_device.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/element_device.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/activity_file.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/activity_file.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/cloud_config_dialog.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/cloud_config_dialog.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/frame_progress.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/frame_progress.xml"
+    },
+    {
+        "merged": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/build/intermediates/res/merged/debug/layout/fragment_pager.xml",
+        "source": "/home/jchen/projects/android/TI/sensortag-20-android/sensortag20/BleSensorTag/src/main/res/layout/fragment_pager.xml"
+    }
+]
